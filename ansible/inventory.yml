@@ -1,0 +1,12 @@
+all:
+  hosts:
+    ubuntu-container:
+      ansible_host: 172.23.0.1
+      ansible_user: mansouriamen
+      ansible_port: 2222
+      ansible_ssh_pass: password
+  children:
+    linux:
+      hosts:
+        ubuntu-container:
+

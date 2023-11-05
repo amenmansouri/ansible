@@ -1,0 +1,16 @@
+---
+- name: Create a file in Ubuntu container
+  hosts: ubuntu-container
+#  become: true
+  tasks:
+    - name: Create file with content
+      ansible.builtin.copy:
+        content: |
+          Hello every body!.
+        dest: ./file.txt  # Replace with the path where you want to create the file
+      register: file_creation
+
+    - name: Display the result
+      ansible.builtin.debug:
+        var: file_creation
+
